@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Closure</title>
+</head>
+
+<body>
+
+
+	<script>
+
+		function outer() {
+			const outerVar = 'Hey I am the outer var';
+			function inner() {
+				const innerVar = 'Hey I am the inner var!';
+				console.log(innerVar);
+				console.log(outerVar);
+			}
+			return inner;
+		}
+		const innerFn = outer();
+		innerFn();
+
+		// what is happening here. You are able to stick a function into a variable then reuse that variable later point in time. 
+		//Where a closue comes into play you have to understand scope and how that works because some varables or functions are not availible.
+		// With closure what is happeing is if you fun your function outside of it, it will still find and access it. This is known as closure.
+
+		//JavaScript is able to create functions inside of functions and still reach outside to the parent scope and use it, even though the function is still running. It will still maintain that variable in memory and access it any time.
+
+		//USE Case Examples
+	</script>
+
+
+	<script src="./closure.js"></script>
+</body>
+
+</html>
