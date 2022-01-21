@@ -49,3 +49,9 @@ const heading = document.querySelector('h2');
 
 
 //Classes!!! 
+// When you select an element there is a class list attribute on them and on that there are methods for getting or removing thoes classes 
+
+
+const pic = document.querySelector('.nice');
+
+console.log(pic.classList);
