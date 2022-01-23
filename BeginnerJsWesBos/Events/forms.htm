@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Forms JS</title>
+	<link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+	<div class="wrapper">
+		<a class="gregg" href="https://greggcline.netlify.app/" target="_blank">Gregg Cline</a>
+
+		<form name="signup">
+			<label for="name">Name</label>
+			<input type="text" id="name" name="name" value="Gregg Cline">
+			<label for="email">Email</label>
+			<input type="email" id="email" name="email" value="ggcline82@gmail.com">
+			<input type="checkbox" name="agree" id="agree">
+			<label for="agree">I agree to the terms and conditions</label>
+			<hr>
+			<button type="submit">Submit</button>
+		</form>
+
+		<!-- If you use a div for a button but its not good practice-->
+		<!-- Tab index helps you move or tab  through them -->
+		<div role="button" tabindex="0">Test</div>
+		<img class="photo" tabindex="0" src="https://picsum.photos/200" alt="Random Photo">
+
+
+	</div>
+
+
+	<script src="./forms.js"></script>
+</body>
+
+</html>
