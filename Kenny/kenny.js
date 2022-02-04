@@ -29,7 +29,7 @@ const people = [
 
 // print name
 function peopleNames(people) {
- console.log(people.name);
+ // console.log(people.name);
 }
 
 for (let i = 0; i < people.length; i++) {
@@ -67,3 +67,16 @@ const totalAge = people.reduce((acc, person) => {
 // }, {}))
 
 console.log(totalAge);
+// create an array
+
+const numbers = [3, 5, 7, 11, 2, 6, 8, 90, 450, 23, 57, 83];
+
+let smallToBig = [];
+//display the list of numbers
+//How to display smallest number to biggest number.
+for (let i = 0; i < numbers.length; i++) {
+ if (smallToBig <= numbers[i]) {
+ } else {
+  console.log(numbers[i]);
+ }
+}

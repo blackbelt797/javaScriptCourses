@@ -80,6 +80,10 @@
 			transition: opacity 0.2s;
 		}
 
+		.modal-outer img {
+			width: 100%;
+		}
+
 		.modal-outer.open {
 			opacity: 1;
 			pointer-events: all;
@@ -87,12 +91,19 @@
 
 		.modal-inner {
 			max-width: 600px;
-			max-height: 200px;
+			max-height: 600px;
 			min-width: 400px;
 			padding: 2rem;
 			border-radius: 5px;
 			background: white;
+			transform: translateY(-200%);
+			transition: 2s;
 
+
+		}
+
+		.modal-outer.open .modal-inner {
+			transform: translateY(0);
 		}
 	</style>
 
