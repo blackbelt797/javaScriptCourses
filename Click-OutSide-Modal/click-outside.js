@@ -20,7 +20,8 @@ function handleCardButtonClick(event) {
  <img width="400" height="400" src="${imgSrc.replace('200', '400')}" alt="${name}"/>
  <p>${desc}</p>`;
 
- //Show modal
+ //Show modal]
+
  modalOuter.classList.add('open');
 }
 
