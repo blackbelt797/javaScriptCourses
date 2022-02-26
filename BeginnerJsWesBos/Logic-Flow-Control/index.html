@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Logic and Flow</title>
+</head>
+
+<body>
+	* empty array
+	* empty object
+
+	<h2>Truthy Values</h2>
+	* 1
+	* -10
+	* full strings
+	* string of "0"
+
+
+	<h2>Falsy Values</h2>
+	* 0
+	* undefined variable
+	* Variable set to null
+	* a ariable set to `"Hello" - 10` NaN
+	* empty strings
+
+
+
+
+
+
+	<script>
+		// Notes:  Once the first condition is true the loop Stops and wont run the rest of the if Statements 
+		// You must seperate them in order to make them all run.
+
+		// Now lets chain an else to it when nothing is a match. 
+
+		// const age = 50;
+
+		// if (age > 70) {
+		// 	console.log('You are in your seventies');
+		// } else if (age > 60) {
+		// 	console.log('In your sixties');
+		// } else if (age > 50) {
+		// 	console.log('In your fifties')
+		// } else {
+		// 	console.log('Nothing')
+		// }
+
+		function slugify(sentance, lowercase) {
+			//One Way of doing it.
+			// if (lowercase) {
+			// 	return sentance.replace(/\s/g, '-').toLowerCase();
+			// }
+			// return sentance.replace(/\s/g, '-'); // you can run this without the else part because the return statement will end the code anyways after it has completed. or stop the code I should. 
+
+			//Second way of wrtiting the same thing
+			// let slug = sentance.replace(/\s/g, '-');
+			// if (lowercase) {
+			// 	slug = slug.toLowerCase();
+			// }
+			// return slug; }
+
+			// Third way but better because the 
+			let slug = sentance.replace(/\s/g, '-');
+			if (sentance) {
+				return slug.toLowerCase();  // This will return if its going to lower case otherwise just return
+			}
+			return slug;
+		}
+
+		// parcticing with defferent operators 
+
+		const name = 'gregg';
+		const last = 'cline';
+		// Q: Why will the code run when I chage the const variable to last and name but when its name or last only the first if statment runs. 
+		if (name === 'megan' || (name === 'gregg' && last === 'cline')) {
+			console.log('Cool Name!');
+		}
+		const isAwesomeName = 'awesome'.includes(name);
+		if (isAwesomeName) {
+			console.log('SUPER COOL AWESOME NAME');
+		}
+
+		function nameIsAwesome(name) {
+			return 'awesome'.includes(name);
+		}
+
+		if (nameIsAwesome('gregg')) {
+			console.log('COOL NAME');
+		}
+
+
+		// Making an array of all the truthy/ falsy values 
+
+		const values = [[], {}, -10, 1, 0, '', 'full string', ' ', undefined, NaN, null];
+
+
+		// looping thorugh the array 
+		console.group('truthy or flasy values');
+		values.forEach(value => {
+			if (value) {
+				console.log(value, 'is truthy');
+			} else {
+				console.log(value, 'is flasy');
+			}
+		});
+		console.groupEnd();
+
+
+	</script>
+
+</body>
+
+</html>
