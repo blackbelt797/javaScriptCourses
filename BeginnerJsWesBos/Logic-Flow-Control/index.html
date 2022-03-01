@@ -110,6 +110,100 @@
 		console.groupEnd();
 
 
+
+		// console.clear();
+
+
+		// Video on Coercion, Ternaries and Conditional Abuse 
+
+		// If you are ever just using the else part of an if statement then it you want the condition to be not true so using a 'Bang' ! in front of the varaible/condition But then you wont need the else syntax
+
+		const isCool = true;
+
+		if (!isCool) {
+
+			console.log('You are not cool');
+		}
+
+		// The 'Bang' ! operator or 'is not" will do another thing called Coercion. This is where it will force something of a different type and you will coerce it into a boolean. So by putting a bang infront of it it turned it into a boolean  
+
+
+		// So if you have a variable with an empty string 
+		const middle = '';
+		//Remember if its an empty string that is a Falsy and by using the !bang will turn it into a boolean of false then if you use the !!bang that will coerce it into a true boolean. 
+		//Coercion is changing one type into another. 
+
+		console.log(middle);
+		//Then if you say
+		//    !middle  = flase
+		//    !!middle = 
+
+
+		// Ternaries 
+
+		const count = 1;
+		const count1 = 1;
+
+		// let word;
+		// This is how you would normally run an if else statement.
+		// if (count === 1) {
+		// 	word = 'item';
+		// } else {
+		// 	word = 'items';
+		// }
+
+		// What is in a turnary? ..... 
+		// 1. Condition 
+		// 2. What to do if true 
+		// 3. What to do if false
+		//Variable Name...Condition then return true or false 	
+		const word = count === 1 ? 'item' : 'items';
+		const sentance = `You have ${count} ${word} in your cart`; // this is one way 
+		// Or you cna do something right inside of the sentance 
+
+		const word1 = count1 === 1 ? 'item' : 'items';
+		const sentance1 = `You have ${count1} item${count1 === 1 ? '' : 's'} in your cart`; // this is one way 
+
+
+		console.log(sentance);
+
+		console.log(sentance1);
+
+		// Another Example of how to use turnaries but with functions
+		function showAdminBar() {
+			console.log('Showing admin bar')
+		}
+		const isAdmin = true;
+
+		// isAdmin ? showAdminBar() : null;
+
+		function check1() {
+			console.log('Running Check 1')
+			return true;
+		}
+		function check2() {
+			console.log('Running Check 2')
+			return true;
+		}
+		function check3() {
+			console.log('Running Check 3')
+			return true;
+		}
+
+		if (check1() && check2() && check3()) {
+			console.log('All Checks Passed!')
+		}
+
+		//this is another way of wirting the same functions as above 
+		isAdmin && showAdminBar();
+
+		//This is another way but it has to be on one line but will break if it goes onto 2lines with no
+		// curly braces
+		if (isAdmin) showAdminBar();
+		if (isAdmin) { showAdminBar(); } // samething but with the curly braces
+
+
+
 	</script>
 
 </body>
