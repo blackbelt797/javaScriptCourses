@@ -115,8 +115,15 @@ const names = [
 // }
 // Now i want you to log only the names under 30
 
+for (let i = 0; i < names.length; i++) {
+ if (names[i].age < 30) {
+  youngPeople.push(names[i]);
+ }
+}
+console.log(youngPeople.name);
+
 // TwoSums problem
-/* What map in javascript 
+/* Whats map in javascript 
   The map object holds key-value pairs and remembers the original inserction order of the keys. Any value 
   (both objects and primitive values) maybe used as either a key or a value.
 
@@ -142,7 +149,7 @@ numbers.forEach((number) => {
  console.log(number);
 });
 
-// Now make an array of 5 objects that have 2 properties each.
+// Now make an array of 5 objects that have 2 properties each. and Display
 
 const cars = [
  {
