@@ -1,0 +1,10 @@
+
+	
+	.container {
+		display: grid;
+		gap: 20px;
+	 grid-template-columns: 400px 200px;
+	 /* Grid auto flow */
+	 grid-auto-flow: column;
+	}
+

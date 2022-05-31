@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Module 8 Data Types</title>
+</head>
+
+<body>
+	<input type="text" name="first" value="Gregg">
+
+
+
+	<script src="https://unpkg.com/lodash"></script>
+	<script>
+
+
+
+		//Notes You can have dashes in side of property names but not in variable names
+		const age = 100;
+
+		const gregg = {
+			age,
+			name: 'Gregg',
+			propertyToCeck: 'NEVER',
+			'cool-dude': true,
+			'really cool': false,
+			'777': true,
+			dog: 'Yoshi',
+			clothing: {
+				shirts: 10,
+				pants: 2,
+			},
+			sayHello(greeting = 'Hey') {
+				return `${greeting} ${this.name}`
+			},
+			// Arrow functions wont work with the "this" key word
+			sneeze: () => {
+				console.log('AHHH CHOO',)
+			}
+		};
+
+		gregg.job = 'Web Developer';
+		gregg.age = 50;
+		console.log(gregg);
+
+		//Note: in javascript you can change the property inside an object when using const but you cant 
+		//overide the actual object
+		//For instance....
+		// const person = {
+		// 	age,
+		// 	name: 'Megan',
+		// }
+		// console.log(person);
+
+
+		// You can Freeze an object with Object.freeze
+
+		const greggFreeze = Object.freeze(gregg);
+		//This is a way to make data imutable
+
+
+		//Accesing properties on an Object 
+		// You can use the dot notation or Square brackets with a string 
+
+		console.log(gregg.age);
+		// const propertyToCeck = prompt('What do you want to check?');
+		// //console.log(propertyToCeck);
+		// console.log(['age']);
+		// console.log(gregg[propertyToCeck]);
+
+		// one usecase for square brackets is When a property of an object is stored  in a variable. you can access it.
+
+
+		// There is a proposal for jecking levels deep into an object
+		// gregg?.jobs?.side is a new "proposal for Javascript" its called "Optional Chaining MD"
+
+
+
+		const nameInput = document.querySelector('[name="first"]');
+
+		// const name = nameInput.value;
+		// console.log(name);
+
+		const name = nameInput ? nameInput.value : '';
+
+		console.log(name);
+
+		// To remove a property from an object you use the delete key
+		//You want to store the delete in a varaible because it will return a value of true or false so it will help you actually see what was deleted
+		console.log(delete gregg.job);
+
+		// these will set the value to nothing or undefined or null 
+		// gregg.age = undefined;
+		// gregg.age = null;
+
+		// What is the difference between a method and a function? 
+		// A method lives inside of a function
+
+		let name1 = 'gregg';
+		let name2 = 'gregg';
+
+		console.log(name1 === name2);
+
+		name1 = 'megan';
+		console.log(name1 === name2);
+		// Update name1 to be what is name2 
+
+		console.log(name1 === name1);
+		name2 = name1;
+		name2 = 'Owen';
+
+		// Now lets do this with objects... What happens when you compare with === on an object?? 
+
+		const person1 = {
+			first: 'gregg',
+			last: 'cline',
+			clothing: {
+				shirts: 10,
+				pants: 2,
+			}
+		}
+
+		const person2 = {
+			first: 'gregg',
+			last: 'cline'
+		}
+
+		// console.log(person1 === person2); // This will be False even though the contents are the same.. 
+
+		// const person3 = person1; // When you do this you are making a refernece NOT a copy of it. That points to the value in person1
+		//person3 was nerver its own object just pointing at the original.
+		// person3.first = 'declan';
+		// console.log(person3.first);
+		// console.log(person1.first);  /// Hmm... whats going on here? This is a fundmental concept in Javascript
+
+		// How to copy an obect! You can do this by Spreading into it ... 
+
+		//const person3 = { ...person1 }; // The spread or object.assing do what are called "Shallow copies"
+		//Meaning that it will only copy 1 level deep
+		//another way it wtih Object.assign
+		//const person4 = Object.assign({}, person1);  // Here is where you will add an empty object then fold the object you want into it. 
+
+		//Using Lodash to clone deep. 
+		const person3 = _.cloneDeep(person1);
+
+
+		person3.first = 'megan';
+		person3.clothing.shirts = 100; // This can create a problem because person3 shirts was changed but 
+		//aslo person1 as well.
+
+		//If you want to do a Deep clone the most popular way of doing it is with "Utility Library like Lodash"
+
+
+		const meatInventory = {
+			bacon: 4,
+			sausage: 3,
+			oyster: 10,
+		}
+
+		const veggieInventory = {
+			lettus: 5,
+			tomato: 3,
+			oyster: 15, // This one will show beacuse the object comes after 
+		}
+
+		const inventory = { ...meatInventory, ...veggieInventory };
+
+
+
+		// Understanding copy vs referencing but with Functions!!! 
+
+		function doStuff(data) {
+			data = 'something else';
+			console.log(data);
+		}
+
+		function doStuff2(data) {
+			data.tomatoes = 1000000;
+			console.log(data);
+		}
+
+
+		doStuff2(inventory);
+
+
+		//If you pass in an object into a funtction  ans modify that object 
+		//then it will change the external object will up dated as well
+
+		//This works with objects and arrays NOT the case with booleans,numbers or strings
+
+		// Bugs can happen when you pass things in as a  Reference and NOT a Copy you might unknowingly chage
+		// The values of the object or array. 
+
+	</script>
+</body>
+
+</html>
