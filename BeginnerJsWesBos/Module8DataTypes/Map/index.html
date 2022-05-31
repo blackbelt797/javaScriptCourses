@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Map</title>
+	<link rel="stylesheet" href="/Setup/base.css">
+</head>
+
+<body>
+
+
+
+	<ul class="prizes">
+
+	</ul>
+	<script>
+
+		const person1 = {
+			name: 'gregg',
+			age: 30,
+		}
+
+		const myMap = new Map();
+
+		//.set()
+
+		myMap.set('name', 'gregg');
+		myMap.set(100, 'this is a number');
+
+		myMap.set(person1, 'Really Cool');
+		console.log(myMap);
+
+
+		//With Map the order is gaurenteed where as in an objec the order can vary 
+
+		const score = 200;
+		const prizes = new Map();
+		prizes.set(100, 'Bear');
+		prizes.set(200, 'Duck');
+		prizes.set(300, 'Car');
+		console.log(`you Win a ${prizes.get(score)}`);
+		//.has()
+		//.delete()
+
+		const ul = document.querySelector('.prizes');
+
+		// prizes.forEach(entry => {
+		// 	console.log(entry);
+		// })
+
+		// This will give you an array of each of the items the first value will be the number and the second will be the name/ of the value. 
+		for (const [points, prize] of prizes) {
+			//	console.log(prize[0], prize[1]); // This will show the value in each individual array. 
+			console.log(points, prize)
+			const li = `<li> ${points} - ${prize}</li>`
+			ul.insertAdjacentHTML('beforeend', li);
+		}
+		// Another way is destructuring which instead of referencing them by their index you can make a varible instead
+
+	</script>
+
+</body>
+
+</html>

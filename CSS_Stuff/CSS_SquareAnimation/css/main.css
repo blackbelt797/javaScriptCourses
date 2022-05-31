@@ -1,0 +1,88 @@
+:root {
+  --clr-body: #0f0f0f;
+}
+
+body {
+  background: var(--clr-body);
+}
+
+.title {
+  font-size: 3em;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  background: red;
+  position: relative;
+  -webkit-animation: square 4s linear 2s infinite alternate backwards running;
+          animation: square 4s linear 2s infinite alternate backwards running;
+}
+
+@-webkit-keyframes square {
+  0% {
+    background: red;
+    left: 0px;
+    top: 0px;
+  }
+  25% {
+    background: gold;
+    left: 500px;
+    top: 0px;
+  }
+  50% {
+    background: lime;
+    left: 500px;
+    top: 500px;
+    border-radius: 50%;
+  }
+  75% {
+    background: dodgerblue;
+    left: 0px;
+    top: 500px;
+  }
+  100% {
+    background: purple;
+    left: 0px;
+    top: 0px;
+    border-radius: 0px;
+  }
+}
+
+@keyframes square {
+  0% {
+    background: red;
+    left: 0px;
+    top: 0px;
+  }
+  25% {
+    background: gold;
+    left: 500px;
+    top: 0px;
+  }
+  50% {
+    background: lime;
+    left: 500px;
+    top: 500px;
+    border-radius: 50%;
+  }
+  75% {
+    background: dodgerblue;
+    left: 0px;
+    top: 500px;
+  }
+  100% {
+    background: purple;
+    left: 0px;
+    top: 0px;
+    border-radius: 0px;
+  }
+}
+/*# sourceMappingURL=main.css.map */

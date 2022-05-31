@@ -1,0 +1,61 @@
+:root {
+ --clr-body: #0f0f0f;
+}
+
+body {
+ background: var(--clr-body);
+}
+.title {
+ font-size: 3em;
+ color: white;
+ display: flex;
+ justify-content: center;
+}
+
+.box {
+ width: 100px;
+ height: 100px;
+ background: red;
+ position: relative;
+
+ animation: square 4s linear 2s infinite alternate backwards running;
+
+ //animation-name: square;
+ //  animation-duration: 4s;
+ //  animation-timing-function: linear;
+ //  animation-delay: 2s;
+ //  animation-iteration-count: infinite;
+ //  animation-direction: alternate;
+ //  animation-fill-mode: backwards;
+ //  animation-play-state: running;
+}
+
+@keyframes square {
+ 0% {
+  background: red;
+  left: 0px;
+  top: 0px;
+ }
+ 25% {
+  background: gold;
+  left: 500px;
+  top: 0px;
+ }
+ 50% {
+  background: lime;
+  left: 500px;
+  top: 500px;
+  border-radius: 50%;
+ }
+ 75% {
+  background: dodgerblue;
+  left: 0px;
+  top: 500px;
+ }
+ 100% {
+  background: purple;
+  left: 0px;
+  top: 0px;
+  border-radius: 0px;
+ }
+}
