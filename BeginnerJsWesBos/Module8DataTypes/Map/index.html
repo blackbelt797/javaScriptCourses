@@ -34,7 +34,7 @@
 		console.log(myMap);
 
 
-		//With Map the order is gaurenteed where as in an objec the order can vary 
+		//With Map the order is gaurenteed where as in an object  the order can vary 
 
 		const score = 200;
 		const prizes = new Map();
@@ -51,13 +51,17 @@
 		// 	console.log(entry);
 		// })
 
-		// This will give you an array of each of the items the first value will be the number and the second will be the name/ of the value. 
+		// This will give you an array of each of the items the first value will be the number and the second will be the name/ of the value. "Time Stamp 11:00ish "
 		for (const [points, prize] of prizes) {
 			//	console.log(prize[0], prize[1]); // This will show the value in each individual array. 
 			console.log(points, prize)
 			const li = `<li> ${points} - ${prize}</li>`
 			ul.insertAdjacentHTML('beforeend', li);
 		}
+
+		//When should you use a map function when you need to keep the order of your items, Some down sides of a map is there is no literal meaning you have to create a new Map.... Maps a simple meant for storing 
+
+
 		// Another way is destructuring which instead of referencing them by their index you can make a varible instead
 
 	</script>
