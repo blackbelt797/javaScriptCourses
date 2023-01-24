@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Arrays</title>
+</head>
+
+<body>
+
+
+	<script>
+
+		// Array 
+		const names = ["Gregg", "Megan", "Owen",];
+
+		// console.log(names[names.length - 1]);
+
+		// // Any use cases of an array you will want to add things to them. Like Push 
+		// // This is using push to add to an arry 
+
+		// names.push('Yoshi');
+		// console.log(names);
+		// const names2 = [...names, 'lux'];
+		// const names3 = ['james', ...names];
+		// console.log(names3);
+
+		// Slice  is immutable
+		/* Slice method returns a shallow copy of a protion of an array into a new array object selected from
+				 start to end (end not imcluded) where start and end represent the index of items in that array. The original
+			 array will NOT be modified.
+		*/
+
+		//Splice is mutable 
+		/* Splice method changes the contents of an array by removing elements and/or adding new elements in place. 
+			 To access part of an array without modifying it see slice(). 
+		*/
+		// Splice Ex:👇
+		// const numbers = [1, 2, 3, 4, 5, 6, 7, 8];
+		// console.log(numbers);
+		// numbers.splice(3, 2);
+		// console.log(numbers);
+
+
+		//Typically you want to use Slice because it wont change the original aray.  
+
+		//How to put something into the middle of an array 
+		const bikes = ['bianchi', 'miele', 'panasonic', 'miyata'];
+
+		const newBikes = [
+			...bikes.slice(0, 2),
+			'benotto',
+			...bikes.slice(2)
+		];
+		//This is how you remove an item from an array... Very common To do!!!!
+		const newBikes2 = [
+			...newBikes.slice(0, 3), //here you are going to the index in the array and removing it. 
+			...newBikes.slice(4) // Here is the index of where you enter back into the array.
+		];
+		console.log(newBikes2);
+
+
+		// 
+		const comments = [
+			{ text: 'Yooo! Whats Up?', id: 123 },
+			{ text: 'Love this', id: 133 },
+			{ text: 'Amazing Work', id: 223 },
+			{ text: 'How did you do that?', id: 333 },
+			{ text: 'So good!', id: 433 },
+		];
+
+		function deleteComments(id, comments) {
+			//First find the index of the item in the array
+			const commentIndex = comments.find(comment => comment.id === id);
+			//Make a new array without that item in it 
+			return [
+				...comments.slice(0, commentIndex),
+
+				...comments.slice(commentIndex + 1),
+
+			];
+			// return our new array
+		}
+		//Long way to find the index of an array 
+		// const greggIndex = names.findIndex(name => {
+		// 	if (name === 'Owen') {
+		// 		return true;
+		// 	} klse {
+		// 		return false;
+		// 	}
+		// });
+
+		// Cleaner way of using findIndex method this is also an explicit return
+
+		// const greggIndex = names.findIndex(name => {
+		// 	return name === 'Megan';
+		// });
+
+		// Even Cleaner way or writing the same thing
+		const greggIndex = names.findIndex(name => name === 'Owen');
+
+		const newNamesWithOutGregg = [
+			// get everything up to Gregg index
+			...names.slice(0, greggIndex),
+			//everything after Gregg index
+			...names.slice(greggIndex + 1)
+		];
+
+		console.log(newNamesWithOutGregg);
+
+
+
+
+		// //Mutation Method - DO CHANGE THE ORIGINAL DATA 
+		// //Antime you want to use a mutation method and NOT mutate the original array
+		// // We need to take a copy of the array.
+		// //const numbersReversed = [...numbers];
+		// const numbersReversed = [...numbers].reverse();
+		// console.log(numbersReversed);
+		// //	numbers.reverse();
+		// //console.log(numbersBackwards);// Dont need this just run the reverse function
+		// //const numbersBackwards = numbers.reverse();
+		// console.log(numbers);
+
+		// //Immutable -THEY DO NOT CHANGE THE ORIGINAL DATA
+		// const pizzaSlice = numbers.slice(2, 4);
+		// console.log(pizzaSlice);
+		// console.log(numbers);
+
+
+
+
+	</script>
+</body>
+
+</html>
