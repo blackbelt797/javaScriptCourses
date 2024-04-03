@@ -199,3 +199,8 @@ const cleanPeople = people.map(function (person) {
 });
 
 console.table(cleanPeople);
+
+
+
+
+
