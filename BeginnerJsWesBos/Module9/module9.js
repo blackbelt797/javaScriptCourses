@@ -200,7 +200,23 @@ const cleanPeople = people.map(function (person) {
 
 console.table(cleanPeople);
 
+const over40 = cleanPeople.filter((person) => person.age > 40);
 
+console.table(over40);
 
+function findById(id) {
+ return function isStudent(student) {
+  return student.id === id;
+ };
+}
 
+function findByProp(prop, propWeAreLookingFor) {
+ return function isStudent(student) {
+  return student[prop] === propWeAreLookingFor;
+ };
+}
 
+const student = students.find(findById('id', '565a'));
+const student2 = students.find(findByProp('first_name', 'Micki'));
+console.log(student);
+console.log(student2);
